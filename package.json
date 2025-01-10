@@ -1,0 +1,16 @@
+{
+  "name": "raycast",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "browser-sync start --server --watch true --browser firefox --files '~/node/bsync/index.html, ~/node/bsync/*.js, ~/node/bsync/*.css' --no-cache --reload-debounce 500 -"
+  },
+  "dependencies": {
+    "p5": "^1.11.2"
+  }
+}

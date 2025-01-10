@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Brackish</title>
+  </head>
+  <body>
+    <div id="links">
+      <div id="video"><a href="#" class="fade">Videos</a></div>
+      <div id="notvideo">
+        <div id="about"><a href="#" class="fade">About</a></div>
+        <div id="contact"><a href="#" class="fade">Contact</a></div>
+        <div id="photos"><a href="#" class="fade">Photos</a></div>
+      </div>
+    </div>
+
+    <script src="sketch.js"></script>
+    <script src="boundary.js"></script>
+    <script src="ray.js"></script>
+    <script src="particle.js"></script>
+
+    <div id="vidbuttons">
+      <div id="vidleft"><a href="#" class="fade"><</a></div>
+      <div id="vidright"><a href="#" class="fade">></a></div>
+    </div>
+
+    <div id="video-container">
+      <iframe
+        id="video1"
+        src="https://www.youtube.com/embed/1lWJXDG2i0A"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        id="video2"
+        src="https://www.youtube.com/embed/I4cB6v9L_MU"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        id="video3"
+        src="https://www.youtube.com/embed/gV7xEfPGLec?si=WShh5sFjMLtK0zzW"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <!-- <video id="video1" src="video1.mp4" controls></video> -->
+      <!-- <video id="video2" src="video2.mp4" controls></video> -->
+      <!-- <video id="video3" src="video3.mp4" controls></video> -->
+    </div>
+    <script>
+      // document.addEventListener('DOMContentLoaded', (event) => {
+      window.onload = () => {
+        const links = document.querySelectorAll(".fade");
+        links.forEach((link) => {
+          link.classList.add("visible");
+        });
+      };
+      const videoLink = document.querySelector("#video");
+      const videoOverlay = document.getElementById("video-container");
+      const buttons = document.getElementById("vidbuttons");
+      videoLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        videoOverlay.style.display = "block"; // Show the video overlay
+        buttons.style.display = "block";
+      });
+      const notVideo = document.querySelector("#notvideo");
+      notVideo.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        videoOverlay.style.display = "none"; // hide the video overlay
+        buttons.style.display = "none";
+      });
+
+      const vidL = document.querySelector("#vidleft");
+      const vidR = document.querySelector("#vidright");
+      const vid1 = document.getElementById("video1");
+      const vid2 = document.getElementById("video2");
+      const vid3 = document.getElementById("video3");
+      let i = 0;
+      vidL.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        i++;
+        console.log(i % 3);
+        if (i % 3 === 0) {
+          vid1.style.display = "block";
+          vid2.style.display = "none";
+          vid3.style.display = "none";
+        } else if (i % 3 === 1) {
+          vid1.style.display = "none";
+          vid2.style.display = "block";
+          vid3.style.display = "none";
+        } else if (i % 3 === 2) {
+          vid1.style.display = "none";
+          vid2.style.display = "none";
+          vid3.style.display = " block";
+        }
+      });
+      vidR.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        if (i === 0) {
+          i = 3;
+        }
+        --i;
+        i = i % 3;
+        i = Math.abs(i);
+        console.log(i);
+        if (i === 0) {
+          vid1.style.display = "block";
+          vid2.style.display = "none";
+          vid3.style.display = "none";
+        } else if (i === 1) {
+          vid1.style.display = "none";
+          vid2.style.display = "block";
+          vid3.style.display = "none";
+        } else if (i === 2) {
+          vid1.style.display = "none";
+          vid2.style.display = "none";
+          vid3.style.display = " block";
+        }
+      });
+    </script>
+  </body>
+</html>

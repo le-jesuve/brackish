@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url("./FiraCodeNerdFont-Regular.ttf");
+}
+
+body {
+  background-color: black;
+}
+
+label {
+  font-size: 15px;
+  font-family: "Fira Code";
+}
+
+#links {
+  position: absolute;
+  font-family: "Fira Code";
+}
+#video {
+  position: absolute;
+}
+#about {
+  position: absolute;
+}
+#contact {
+  position: absolute;
+}
+#photos {
+  position: absolute;
+}
+#video-container {
+  display: none;
+  position:fixed;
+  /*width: 30%;*/
+  height: auto;
+  z-index: 1000;
+}
+#video1{
+  /*display: none;*/
+}
+#video2{
+  display: none;
+}
+#video3{
+  display: none;
+}
+#vidbuttons {
+  position: fixed;
+  display: none;
+  z-index: 1000;
+  /*}*/
+  /*.btn {*/
+  /*position: fixed;*/
+  /*appearance: none;*/
+  /*background-color: transparent;*/
+  /*border-width: 0;*/
+  /*box-sizing: border-box;*/
+  color: white;
+  /*margin: 0;*/
+  opacity: 1 !important;
+  /*outline: 0;*/
+  /*text-decoration: none;*/
+  /*backface-visibility: hidden;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  font-family: "Fira Code";
+  font-size: 80px;
+  /*cursor: pointer;*/
+}
+#vidleft{
+  position: fixed;
+  top: 55%;
+  left: 15%;
+  font-size: 20px;
+}
+#vidright{
+  position: fixed;
+  top: 55%;
+  left: 85%;
+  font-size: 20px;
+}
+video {
+  border: 1px solid white;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  opacity: 0;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: gainsboro;
+  transition: background-color 0.5s;
+}
+a.visible {
+  transition: opacity 10s;
+  opacity: 1;
+}
+/*#video-container{*/
+/*  visibility: hidden;*/
+/*}*/
